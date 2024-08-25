@@ -1,3 +1,14 @@
+package xizi.command;
+
+import xizi.Deadline;
+import xizi.Event;
+import xizi.XiziException;
+import xizi.Parser;
+import xizi.TaskList;
+import xizi.Storage;
+import xizi.Ui;
+import xizi.Task;
+
 import java.time.LocalDateTime;
 import java.util.regex.Matcher;
 
@@ -23,14 +34,14 @@ public class ListOnCommand implements Command {
             for (Task task : actions.getItems()) {
                 if (task instanceof Event) {
                     Event event = (Event) task;
-                    if ((event.from.isBefore(date) || event.from.equals(date))&&
-                                (event.to.isAfter(date) || event.to.equals(date))) {
+                    if ((event.getFrom().isBefore(date) || event.getFrom().equals(date))&&
+                                (event.getTo().isAfter(date) || event.getTo().equals(date))) {
                             ui.printMessage(event.toString());
                             tasksFound = true;
                         }
                     } else if (task instanceof Deadline) {
                         Deadline deadline = (Deadline) task;
-                        if (deadline.ddl.equals(date)) {
+                        if (deadline.getDdl().equals(date)) {
                             ui.printMessage(deadline.toString());
                             tasksFound = true;
                         }

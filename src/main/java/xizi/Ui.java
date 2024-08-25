@@ -1,3 +1,4 @@
+package xizi;
 
 import java.io.InputStream;
 import java.io.PrintStream;

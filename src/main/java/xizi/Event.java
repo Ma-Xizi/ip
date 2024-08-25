@@ -1,3 +1,5 @@
+package xizi;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -11,6 +13,14 @@ public class Event extends Task {
         super(description);
         this.from = from;
         this.to = to;
+    }
+
+    public LocalDateTime getFrom(){
+        return this.from;
+    }
+
+    public LocalDateTime getTo(){
+        return this.to;
     }
 
     @Override

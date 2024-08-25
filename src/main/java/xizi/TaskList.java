@@ -1,3 +1,5 @@
+package xizi;
+
 import java.util.ArrayList;
 import java.util.List;
 // ArrayList implementation, auto-adjust the indexing after deletion

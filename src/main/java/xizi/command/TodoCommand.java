@@ -1,3 +1,7 @@
+package xizi.command;
+
+import xizi.*;
+
 import java.io.IOException;
 import java.util.regex.Matcher;
 

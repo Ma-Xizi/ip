@@ -1,4 +1,6 @@
-//https://nus-cs2103-ay2425s1.github.io/website/admin/standardsAndConventions.html
+package xizi;//https://nus-cs2103-ay2425s1.github.io/website/admin/standardsAndConventions.html
+
+import xizi.command.Command;
 
 import java.io.IOException;
 import java.util.List;

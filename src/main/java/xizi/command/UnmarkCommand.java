@@ -1,15 +1,19 @@
+package xizi.command;
+
+import xizi.*;
+
 import java.io.IOException;
 import java.util.regex.Matcher;
 
-public class MarkCommand implements Command {
+public class UnmarkCommand implements Command {
     private final int taskNumber;
 
-    public MarkCommand(String userInput) throws XiziException {
-        Matcher matcher = CommandType.MARK.matcher(userInput);
+    public UnmarkCommand(String userInput) throws XiziException {
+        Matcher matcher = CommandType.UNMARK.matcher(userInput);
         if (matcher.matches()) {
             taskNumber = Integer.parseInt(matcher.group(1)) - 1;
         } else {
-            throw new XiziException("Invalid mark command format. Use: mark <task number>");
+            throw new XiziException("Invalid unmark command format. Use: unmark <task number>");
         }
     }
 
@@ -17,8 +21,8 @@ public class MarkCommand implements Command {
     public void execute(TaskList actions, Storage storage, Ui ui) throws IOException, XiziException {
         Parser.validateTaskNumber(taskNumber, actions);
         ui.showLine();
-        ui.printMessage("Nice! I've marked this task as done: ");
-        ui.printMessage(actions.markTask(taskNumber));
+        ui.printMessage("OK, I've marked this task as not done yet:");
+        ui.printMessage(actions.unmarkTask(taskNumber));
         ui.showLine();
         storage.saveTasks(actions.getItems());
     }

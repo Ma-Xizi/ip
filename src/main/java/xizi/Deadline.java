@@ -1,3 +1,5 @@
+package xizi;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -9,6 +11,10 @@ public class Deadline extends Task{
     public Deadline(String description, LocalDateTime deadline) {
         super(description);
         this.ddl = deadline;
+    }
+
+    public LocalDateTime getDdl(){
+        return this.ddl;
     }
 
     @Override
